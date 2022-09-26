@@ -29,7 +29,7 @@ public class C04_Actions extends TestBaseBeforeAfter {
         driver.switchTo().alert().accept();
         //Elemental Selenium linkine tiklayalim
         driver.findElement(By.xpath("//*[text()='Elemental Selenium']")).click();
-        List<String> windowlist = new ArrayList<String>(driver.getWindowHandles());
+        List<String> windowlist = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(windowlist.get(1));
         //Acilan sayfada h1 taginda “Elemental Selenium” yazdigini test edelim
         Assert.assertEquals("Elemental Selenium",driver.findElement(By.xpath("//h1")).getText());

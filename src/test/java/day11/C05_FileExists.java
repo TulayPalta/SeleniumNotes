@@ -18,7 +18,7 @@ public class C05_FileExists extends TestBaseBeforeAfter {
         driver.findElement(By.xpath("//*[text()='test.txt']")).click();
         Thread.sleep(2000);
         //Ardından isExist( )  methodunda dosyanın başarıyla indirilip indirilmediğini test edelim
-        String dosyaYolu = "C:\\Users\\Lenovo\\Downloads\\test.txt";
+        String dosyaYolu = "C:\\Users\\Windows 10\\İndirilenler\\test.txt";
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
         //İndirildiğini konsolda gösterin
         System.out.println(Files.exists(Paths.get(dosyaYolu)));

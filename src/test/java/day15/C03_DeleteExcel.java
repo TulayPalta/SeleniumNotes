@@ -1,16 +1,23 @@
-package day14;
+package day15;
 
 import org.apache.poi.ss.usermodel.*;
-import org.junit.Assert;
 import org.junit.Test;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class C01_ReadExcel {
+public class C03_DeleteExcel {
     @Test
-    public void readExcelTest1() throws IOException {
+    public void test1() throws IOException {
+        //-Dosya yolunu bir String degiskene atayalim
+        //-FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
+        //-Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
+        //-WorkbookFactory.create(fileInputStream)
+        //-Sheet objesi olusturun workbook.getSheetAt(Sayfa1)
+        //-Row objesi olusturun sheet.getRow(3)
+        //-Cell objesi olusturun row.getCell(3)
+        //-3. Satır 3. Cell'deki veriyi silelim
+        //-Silindiğini test edin
         //- Dosya yolunu bir String degiskene atayalim
         String dosyaYolu = "src/resources/ulkeler.xlsx";
         //- FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
@@ -24,12 +31,15 @@ public class C01_ReadExcel {
         Row row = sheet.getRow(3); // Sayfa bir deki 3. satırı bu şekilde seçeriz
         //- Cell objesi olusturun row.getCell(index)
         Cell cell = row.getCell(3); // Satır seçimi yapıldıktan sonra hücre seçimi bu şekilde yapılır
-        System.out.println(cell);
-        //- 3. index'deki satirin 3. index'indeki datanin Cezayir oldugunu test edin
-        String expectedData = "Cezayir";
-        String actualData = cell.toString();
-        Assert.assertEquals(expectedData,actualData);
-        Assert.assertEquals(expectedData,cell.getStringCellValue());
+        //-3. Satır 3. Cell'deki veriyi silelim
+        row.removeCell(cell);
+        /*
+        Bir cell'deki veriyi silmek için row objesine ihtiyac vardır.
+        row objesi ile removeCell() methodunu kullanarak cell objesi ile belirttimiz cell değerini silebiliriz
+         */
+        FileOutputStream fos = new FileOutputStream(dosyaYolu);
+        workbook.write(fos);
+        System.out.println(cell.toString());
 
     }
 }

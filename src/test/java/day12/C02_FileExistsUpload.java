@@ -20,7 +20,7 @@ public class C02_FileExistsUpload extends TestBaseBeforeAfter {
         göndeririz.
          */
         //Yuklemek istediginiz dosyayi secelim.
-        String dosyaYolu = "C:\\Users\\Lenovo\\Downloads\\test.txt";
+        String dosyaYolu = "C:\\Users\\Windows 10\\Downloads";
         dosyaSec.sendKeys(dosyaYolu);
         //Upload butonuna basalim.
         driver.findElement(By.xpath("//*[@id='file-submit']")).click();

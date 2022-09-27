@@ -27,7 +27,7 @@ public class C04_FileExists {
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
 
  */
-        String dosyaYolu = "C:\\Users\\Windows 10\\İndirilenler\\test.txt";
+        String dosyaYolu = "C:\\Users\\Windows 10\\Downloads";
         //System.out.println(Files.exists(Paths.get(dosyaYolu)));
         Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
         /*

@@ -42,7 +42,7 @@ public class Task01_automationexercise {
         //Enter name and email address
         driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Tulay Palta");
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("paltabunyamin80@gmail.com");
+        driver.findElement(By.xpath("//input[@data-qa='signup-email']")).sendKeys("pa11ltabunyamin80@gmail.com");
         Thread.sleep(3000);
 
         // Click 'Signup' button
